@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <a-asset-item id="testModel" src="free_sci-fi_vehicle_025_lv_-_public_domain_cc0/scene.gltf"></a-asset-item>
+          </a-assets>
+        <a-entity gltf-model="#testModel" modify-materials animation-mixer></a-entity>
+        
+    </a-scene>
+</body>
+</html>
