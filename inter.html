@@ -7,10 +7,12 @@
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
     <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
+
 </head>
 <body>
     
-    <a-scene cursor="rayOrigin: mouse">
+    <a-scene cursor="rayOrigin: mouse" physics='gravity: -9.8' antialias='true'>
         <!-- <a-assets>
             <img id="gazon" src="motif-herbe-verte-transparente/1601.m10.i311.n029.S.c10.164511620 Seamless green grass vector pattern.jpg">
         </a-assets> -->
@@ -54,6 +56,8 @@
           <a-entity dragndrop sphere-collider="objects: a-box" super-hands hand-controls="hand: left"></a-entity>
           <a-entity dragndrop sphere-collider="objects: a-box" super-hands hand-controls="hand: right"></a-entity>
         </a-entity>
+     
+
         <!-- hover & drag-drop won't have any obvious effect without some additional event handlers or components. See the examples page for more -->
         <a-box dragdrop hoverable grabbable stretchable draggable droppable color="blue" position="0 2 -2"></a-box>
     </a-scene>
