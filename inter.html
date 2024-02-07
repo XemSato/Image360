@@ -53,13 +53,13 @@
         <a-assets></a-assets>
         <a-entity>
           <a-camera></a-camera>
-          <a-entity dragndrop sphere-collider="objects: a-box" super-hands hand-controls="hand: left"></a-entity>
-          <a-entity dragndrop sphere-collider="objects: a-box" super-hands hand-controls="hand: right"></a-entity>
+          <a-entity  sphere-collider="objects: a-box" super-hands hand-controls="hand: left"></a-entity>
+          <a-entity  sphere-collider="objects: a-box" super-hands hand-controls="hand: right"></a-entity>
         </a-entity>
      
 
         <!-- hover & drag-drop won't have any obvious effect without some additional event handlers or components. See the examples page for more -->
-        <a-box dragdrop hoverable grabbable stretchable draggable droppable color="blue" position="0 2 -2"></a-box>
+        <a-box droppable color="blue" position="0 2 -2"></a-box>
     </a-scene>
 </body>
 </html>
