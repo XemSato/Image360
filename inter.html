@@ -59,7 +59,10 @@
      
 
         <!-- hover & drag-drop won't have any obvious effect without some additional event handlers or components. See the examples page for more -->
-        <a-box droppable color="blue" position="0 2 -2"></a-box>
+        <a-box droppable color="blue" position="0 2 -2" super-hands="colliderEvent: raycaster-intersection;
+        colliderEventProperty: els;
+        colliderEndEvent:raycaster-intersection-cleared;
+        colliderEndEventProperty: clearedEls;"></a-box>
     </a-scene>
 </body>
 </html>
