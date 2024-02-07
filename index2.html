@@ -6,9 +6,10 @@
     <title>Document</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-cursor-teleport@1.4.0/dist/aframe-cursor-teleport-component.min.js"></script>
 </head>
 <body>
-    <a-scene>
+    <a-scene cursor="ayOrigin: mouse">
         
       <a-assets>
           <img id="gazon" src="motif-herbe-verte-transparente/1601.m10.i311.n029.S.c10.164511620 Seamless green grass vector pattern.jpg">
@@ -22,16 +23,25 @@
       
       
       <a-entity id="cameraRig" cursor-teleport="cameraRig: #cameraRig; cameraHead: #head">
-        <a-entity oculus-touch-controls="hand: left"></a-entity>
-        <a-entity oculus-touch-controls="hand: right"></a-entity>
-        <a-entity id="head" position="0 1.52 0" camera look-controls="reverseMouseDrag: true">
+            <a-entity oculus-touch-controls="hand: left"></a-entity>
+            <a-entity oculus-touch-controls="hand: right"></a-entity>
+            <a-entity id="head" position="0 1.52 0" camera look-controls="reverseMouseDrag: true"></a-entity>
       </a-entity>
-    </a-entity>
       
     </a-scene>
 
     <script>
-        
+        AFRAME.registerComponent('thumbstick-logging',{
+  init: function () {
+    this.el.addEventListener('thumbstickmoved', this.logThumbstick);
+  },
+  logThumbstick: function (evt) {
+    if (evt.detail.y > 0.95) { console.log("DOWN"); }
+    if (evt.detail.y < -0.95) { console.log("UP"); }
+    if (evt.detail.x < -0.95) { console.log("LEFT"); }
+    if (evt.detail.x > 0.95) { console.log("RIGHT"); }
+  }
+});
     </script>
 </body>
 </html>
