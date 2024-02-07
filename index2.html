@@ -20,22 +20,18 @@
       <!-- Textured plane parallel to ground. -->
       <a-plane src="#gazon" height="100" width="100" rotation="-90 0 0" repeat="50 50"></a-plane>
       
-      <a-entity id="cameraRig">
-        <!-- camera -->
-        <a-entity id="head" camera wasd-controls look-controls></a-entity>
-        <!-- hand controls -->
-        <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
-        <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      
+      <a-entity id="cameraRig" cursor-teleport="cameraRig: #cameraRig; cameraHead: #head">
+        <a-entity oculus-touch-controls="hand: left"></a-entity>
+        <a-entity oculus-touch-controls="hand: right"></a-entity>
+        <a-entity id="head" position="0 1.52 0" camera look-controls="reverseMouseDrag: true">
       </a-entity>
-
-      <a-entity id="cameraRig2">
-        <a-camera />
-        <a-entity
-          teleport-controls="cameraRig: #cameraRig2"
-          gearvr-controls
-         />
-      </a-entity>
-
+    </a-entity>
+      
     </a-scene>
+
+    <script>
+        
+    </script>
 </body>
 </html>
