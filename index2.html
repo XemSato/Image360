@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-teleport-controls/dist/aframe-teleport-controls.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        
+      <a-assets>
+          <img id="gazon" src="motif-herbe-verte-transparente/1601.m10.i311.n029.S.c10.164511620 Seamless green grass vector pattern.jpg">
+      </a-assets>
+    
+      <!-- Basic plane. -->
+      <a-plane color="#CCC" height="100" width="100"></a-plane>
+    
+      <!-- Textured plane parallel to ground. -->
+      <a-plane src="#gazon" height="100" width="100" rotation="-90 0 0" repeat="50 50"></a-plane>
+      
+
+    <a-entity id="left-hand" brush paint-controls="hand: left" ui teleport-controls></a-entity>
+    <a-entity id="right-hand" brush paint-controls="hand: right" ui teleport-controls></a-entity>
+
+
+    </a-scene>
+</body>
+</html>
