@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-teleport-controls/dist/aframe-teleport-controls.min.js"></script>
+    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
 </head>
 <body>
     <a-scene>
@@ -20,10 +20,21 @@
       <!-- Textured plane parallel to ground. -->
       <a-plane src="#gazon" height="100" width="100" rotation="-90 0 0" repeat="50 50"></a-plane>
       
+      <a-entity id="cameraRig">
+        <!-- camera -->
+        <a-entity id="head" camera wasd-controls look-controls></a-entity>
+        <!-- hand controls -->
+        <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+        <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      </a-entity>
 
-    <a-entity id="left-hand" brush paint-controls="hand: left" ui teleport-controls></a-entity>
-    <a-entity id="right-hand" brush paint-controls="hand: right" ui teleport-controls></a-entity>
-
+      <a-entity id="cameraRig2">
+        <a-camera />
+        <a-entity
+          teleport-controls="cameraRig: #cameraRig2"
+          gearvr-controls
+         />
+      </a-entity>
 
     </a-scene>
 </body>
