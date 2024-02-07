@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Cubes</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene cursor="rayOrigin: mouse">
+        <a-assets>
+            <img id="gazon" src="motif-herbe-verte-transparente/1601.m10.i311.n029.S.c10.164511620 Seamless green grass vector pattern.jpg">
+        </a-assets>
+        
+        <!-- Ground plane -->
+        <a-plane color="#CCC" height="100" width="100"></a-plane>
+        
+        <!-- Textured plane parallel to ground -->
+        <a-plane src="#gazon" height="100" width="100" rotation="-90 0 0" repeat="50 50"></a-plane>
+
+        <!-- Cubes -->
+        <a-entity position="-3 0 -3" class="interactive-cube"
+                  material="color: red"
+                  geometry="primitive: box"
+                  clickable
+                  event-set__mouseenter="_event: mouseenter; material.color: green"
+                  event-set__mouseleave="_event: mouseleave; material.color: red"
+                  event-set__click="_event: click; scale: 1.2 1.2 1.2">
+            <a-text value="Cube 1" align="center" position="0 2 0"></a-text>
+        </a-entity>
+
+        <a-entity position="0 0 -3" class="interactive-cube"
+                  material="color: green"
+                  geometry="primitive: box"
+                  clickable
+                  event-set__mouseenter="_event: mouseenter; material.color: blue"
+                  event-set__mouseleave="_event: mouseleave; material.color: green"
+                  event-set__click="_event: click; scale: 1.2 1.2 1.2">
+            <a-text value="Cube 2" align="center" position="0 2 0"></a-text>
+        </a-entity>
+
+        <a-entity position="3 0 -3" class="interactive-cube"
+                  material="color: blue"
+                  geometry="primitive: box"
+                  clickable
+                  event-set__mouseenter="_event: mouseenter; material.color: yellow"
+                  event-set__mouseleave="_event: mouseleave; material.color: blue"
+                  event-set__click="_event: click; scale: 1.2 1.2 1.2">
+            <a-text value="Cube 3" align="center" position="0 2 0"></a-text>
+        </a-entity>
+
+        <!-- Add more cubes similarly -->
+
+    </a-scene>
+</body>
+</html>

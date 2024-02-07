@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script> -->
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+</head>
+<body>
+
+    <a-scene>
+        <a-entity id="cameraRig" position="0 1.6 0">
+			<a-camera look-controls wasd-controls position="0 0 0">
+				<a-gui-cursor id="cursor"
+						  raycaster="objects: [gui-interactable]"
+						  fuse="false"
+				>
+				</a-gui-cursor> <!-- /cursor -->
+			</a-camera> <!-- /camera -->
+		</a-entity>
+        <!-- <a-entity environment="preset: japan;"></a-entity> -->
+    </a-scene>
+</body>
+</html>
